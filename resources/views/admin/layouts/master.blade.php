@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-@include('admin.layouts.extra.meta')
-  <title>Flexy | dashboard</title>  
-  {{-- <title>Flexy| {{ $page_title }}</title>   --}}
-  @include('admin.layouts.extra.css')
+  @if (app()->getLocale()=='ar')
+   @include('admin.layouts.extra.rtl.meta')
+  @else    
+   @include('admin.layouts.extra.meta')
+  @endif 
+  {{-- <title>Flexy | dashboard</title>   --}}
+  <title>Flexy | {{ $page_title }}</title> 
+  @if (app()->getLocale()=='ar')
+   @include('admin.layouts.extra.rtl.css')
+  @else    
+   @include('admin.layouts.extra.css')
+  @endif 
 
 </head>
 <body class="hold-transition sidebar-mini accent-purple">
@@ -36,7 +44,11 @@
     <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-@include('admin.layouts.extra.js')
+  @if (app()->getLocale()=='ar')
+   @include('admin.layouts.extra.rtl.js')
+  @else    
+   @include('admin.layouts.extra.js')
+  @endif 
 {{-- @yield('js') --}}
 @stack('js')
 </body>

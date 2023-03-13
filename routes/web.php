@@ -1,5 +1,7 @@
 <?php
 
+use App\Actions\showHome;
+use App\Http\Controllers\ChangeLang;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return view('admin.layouts.master');
-})->name('home');
+// Route::get('/', function () {
+//     // return view('welcome');
+//     return view('admin.layouts.master');
+// })->name('home');
+Route::get('/',showHome::class)->name('home');
+Route::get('/language/{lang}', ChangeLang::class)->name('lang_change');

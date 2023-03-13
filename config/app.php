@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ar',
 
     /*
     |--------------------------------------------------------------------------
@@ -195,6 +195,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        
+        App\Modules\Roles\providers\RolesProvider::class,
+        App\Modules\Permissions\providers\PermissionsProvider::class,
+        App\Modules\Users\providers\UsersProvider::class,
     ],
 
     /*
